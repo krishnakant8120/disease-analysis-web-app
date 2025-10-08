@@ -16,9 +16,9 @@ def prediction_system(input_data,model):
     output=model.predict(input_data)
     return output
 
-heart_model=pickle.load(open("E:/ai/multipleshowcase/head_model.sav",'rb'))
-diabetes_model=pickle.load(open("E:/ai/multipleshowcase/diabetes_model.sav",'rb'))
-house_price_model=pickle.load(open("E:/ai/multipleshowcase/house_price_model.sav",'rb'))
+heart_model=pickle.load(open("head_model.sav",'rb'))
+diabetes_model=pickle.load(open("diabetes_model.sav",'rb'))
+house_price_model=pickle.load(open("house_price_model.sav",'rb'))
 
 with st.sidebar:
     
@@ -163,5 +163,6 @@ if(selection=="House price prediction"):
         result=prediction_system([crim,zn,indus,chas,nox,rm,age,dis,rad,tax,ptratio,b,lstat],house_price_model)
 
     st.success(result)
+
 
 
